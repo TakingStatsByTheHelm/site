@@ -25,8 +25,12 @@
 
 <meta name="author" content="Jonathan Lee Helm">
 
-<meta name="date" content="2016-09-11">
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +38,7 @@
   
   
 <link rel="prev" href="index.html">
-<link rel="next" href="literature.html">
+<link rel="next" href="t-tests.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -108,15 +112,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#mission"><i class="fa fa-check"></i><b>1.1</b> Mission</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#scope"><i class="fa fa-check"></i><b>1.2</b> Scope</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>2</b> Notation</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="2" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>2</b> Notation</a><ul>
+<li class="chapter" data-level="2.1" data-path="notation.html"><a href="notation.html#table-of-notation"><i class="fa fa-check"></i><b>2.1</b> Table of Notation</a></li>
+<li class="chapter" data-level="2.2" data-path="notation.html"><a href="notation.html#examples-with-cross-sectional-data"><i class="fa fa-check"></i><b>2.2</b> Examples With Cross-Sectional Data</a></li>
+<li class="chapter" data-level="2.3" data-path="notation.html"><a href="notation.html#examples-with-repeated-measures-data"><i class="fa fa-check"></i><b>2.3</b> Examples With Repeated Measures Data</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="3" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i><b>3</b> <em>t</em>-tests</a><ul>
+<li class="chapter" data-level="3.1" data-path="t-tests.html"><a href="t-tests.html#what-is-a-t-test"><i class="fa fa-check"></i><b>3.1</b> What is a <em>t</em>-test?</a></li>
+<li class="chapter" data-level="3.2" data-path="t-tests.html"><a href="t-tests.html#what-are-the-different-types-of-t-tests"><i class="fa fa-check"></i><b>3.2</b> What are the different types of <em>t</em>-tests?</a></li>
+<li class="chapter" data-level="3.3" data-path="t-tests.html"><a href="t-tests.html#independent-samples-t-tests"><i class="fa fa-check"></i><b>3.3</b> Independent samples <em>t</em>-tests</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="t-tests.html"><a href="t-tests.html#an-example-in-r"><i class="fa fa-check"></i><b>3.3.1</b> An example in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="t-tests.html"><a href="t-tests.html#dependent-samples-t-tests"><i class="fa fa-check"></i><b>3.4</b> Dependent samples <em>t</em>-tests</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="t-tests.html"><a href="t-tests.html#an-example-in-r-1"><i class="fa fa-check"></i><b>3.4.1</b> An example in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>4</b> ANOVA</a></li>
+<li class="chapter" data-level="5" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>5</b> Regression</a></li>
+<li class="chapter" data-level="6" data-path="multilevel-models.html"><a href="multilevel-models.html"><i class="fa fa-check"></i><b>6</b> Multilevel Models</a></li>
+<li class="chapter" data-level="7" data-path="structural-equation-models.html"><a href="structural-equation-models.html"><i class="fa fa-check"></i><b>7</b> Structural Equation Models</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -139,8 +153,235 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="notation" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Notation</h1>
-<p><em>Need to fill this in</em></p>
+<p>Notation refers to the system of written symbols used to represent data or mathematical operations. Within this chapter, you’ll find a summary of all notation used throughout <em>Taking Stats by the Helm</em>.</p>
+<div id="table-of-notation" class="section level2">
+<h2><span class="header-section-number">2.1</span> Table of Notation</h2>
+<table style="width:96%;">
+<colgroup>
+<col width="23%" />
+<col width="72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(N\)</span></td>
+<td>Number of individuals within the sample</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n_i\)</span></td>
+<td>The number of observations for individual <span class="math inline">\(i\)</span> (this is for repetead measures)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(B_0\)</span>, <span class="math inline">\(B_1\)</span>, …, <span class="math inline">\(B_p\)</span></td>
+<td>These are the <span class="math inline">\(p+1\)</span> regression coefficients</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X_{k}\)</span></td>
+<td>The <span class="math inline">\(k_{th}\)</span> variable</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X_{k,i}\)</span></td>
+<td>The <span class="math inline">\(k_{th}\)</span> variable measured on individual <span class="math inline">\(i\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X_{k,i,t}\)</span></td>
+<td>The <span class="math inline">\(k_{th}\)</span> variable measured on individual <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="examples-with-cross-sectional-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Examples With Cross-Sectional Data</h2>
+<p>Consider the following data set. There is an identification variable (labelled ‘ID’), and there are three measured variables, labeled ‘Gender’, ‘Age’, and ‘Score’. Within this data set, each individual has one observation per variable (i.e., there are no repeated measures).</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Male</td>
+<td>37</td>
+<td>12.4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Female</td>
+<td>41</td>
+<td>19.8</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Male</td>
+<td>50</td>
+<td>17.2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="odd">
+<td>100</td>
+<td>Female</td>
+<td>62</td>
+<td>24.7</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Within this example</em></strong>:</p>
+<ul>
+<li><span class="math inline">\(N\)</span> equals 100 (there are 100 individuals within the data set)</li>
+<li><span class="math inline">\(n_i\)</span> equals 1 for each individual (i.e., we only have one observation for each individual)</li>
+<li><span class="math inline">\(k\)</span> equals 3 because we have three observed variables within our data set (Gender, Age, and Score)</li>
+<li>For <span class="math inline">\(X_k\)</span>, we can define <span class="math inline">\(X_1\)</span> = Gender, <span class="math inline">\(X_2\)</span> = Age, and <span class="math inline">\(X_2\)</span> = Score
+<ul>
+<li><em><strong>Please note</strong></em> that this labelling is <em><strong>arbitrary</strong></em></li>
+<li>We could have used <span class="math inline">\(X_1\)</span> = Age, <span class="math inline">\(X_2\)</span> = Score, and <span class="math inline">\(X_2\)</span> = Gender</li>
+<li>In this case, we prefer <span class="math inline">\(X_1\)</span> = Gender, <span class="math inline">\(X_2\)</span> = Age, and <span class="math inline">\(X_2\)</span> = Score because it matches the order of the columns within the data set</li>
+</ul></li>
+<li><span class="math inline">\(X_{k,i}\)</span> refers to a specific observation on variable <span class="math inline">\(k\)</span> for individual <span class="math inline">\(i\)</span>. Using the labeling system from the above bullet point (i.e., <span class="math inline">\(X_1\)</span> = Gender, <span class="math inline">\(X_2\)</span> = Age, and <span class="math inline">\(X_2\)</span> = Score),
+<ul>
+<li><span class="math inline">\(X_{1,1}\)</span> = Male</li>
+<li><span class="math inline">\(X_{1,100}\)</span> = Female</li>
+</ul></li>
+<li>Within this case we do not have any meaningful information for <span class="math inline">\(X_{kit}\)</span>
+<ul>
+<li>We only have one measurement per individual. Therefore, we do not refer to any of the observations with cross-section data using the <span class="math inline">\(X_{kit}\)</span> nomenclature.</li>
+</ul></li>
+</ul>
+</div>
+<div id="examples-with-repeated-measures-data" class="section level2">
+<h2><span class="header-section-number">2.3</span> Examples With Repeated Measures Data</h2>
+<p>Consider the following data set. There is an identification variable (labelled ‘ID’), a time variable (labelled ‘Time’), and there are three measured variables, labeled ‘Gender’, ‘Age’, and ‘Score’. Within this data set, each individual has <em>multiple</em> observations per variable.</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Time</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>Male</td>
+<td>37</td>
+<td>12.4</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>Male</td>
+<td>38</td>
+<td>13.8</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>Male</td>
+<td>39</td>
+<td>13.9</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>Female</td>
+<td>41</td>
+<td>19.8</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>2</td>
+<td>Female</td>
+<td>42</td>
+<td>22.0</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1</td>
+<td>Male</td>
+<td>50</td>
+<td>17.2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+<td>Male</td>
+<td>51</td>
+<td>18.4</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>3</td>
+<td>Male</td>
+<td>52</td>
+<td>19.6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>Male</td>
+<td>53</td>
+<td>19.8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td>4</td>
+<td>Male</td>
+<td>39</td>
+<td>22.8</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Within this example</em></strong>:</p>
+<ul>
+<li><span class="math inline">\(N\)</span> equals 50 (there are 50 individuals within the data set)</li>
+<li><span class="math inline">\(n_i\)</span> equals
+<ul>
+<li>3 for the <span class="math inline">\(1^{st}\)</span> individual</li>
+<li>2 for the <span class="math inline">\(2^{nd}\)</span> individual</li>
+<li>4 for the <span class="math inline">\(3^{rd}\)</span> individual</li>
+<li>4 for the <span class="math inline">\(50^{th}\)</span> individual</li>
+</ul></li>
+<li><span class="math inline">\(k\)</span> equals 3 because we have three observed variables within our data set (Gender, Age, and Score)</li>
+<li>For <span class="math inline">\(X_k\)</span>, we can define <span class="math inline">\(X_1\)</span> = Gender, <span class="math inline">\(X_2\)</span> = Age, and <span class="math inline">\(X_2\)</span> = Score
+<ul>
+<li><em><strong>Please note</strong></em> that this labelling is <em><strong>arbitrary</strong></em></li>
+<li>We could have used <span class="math inline">\(X_1\)</span> = Age, <span class="math inline">\(X_2\)</span> = Score, and <span class="math inline">\(X_2\)</span> = Gender</li>
+<li>In this case, we prefer <span class="math inline">\(X_1\)</span> = Gender, <span class="math inline">\(X_2\)</span> = Age, and <span class="math inline">\(X_2\)</span> = Score because it matches the order of the columns within the data set</li>
+</ul></li>
+<li><span class="math inline">\(X_{k,i}\)</span> doesn’t have a specific meaning because we must refer to a <em>specific time point</em> for each observation</li>
+<li><span class="math inline">\(X_{k,i,t}\)</span> refers to a specific observation on variable <span class="math inline">\(k\)</span> for individual <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>. Using the labeling system from the above bullet point (i.e., <span class="math inline">\(X_1\)</span> = Gender, <span class="math inline">\(X_2\)</span> = Age, and <span class="math inline">\(X_2\)</span> = Score),
+<ul>
+<li><span class="math inline">\(X_{1,2,2}\)</span> = Female</li>
+<li><span class="math inline">\(X_{2,1,3}\)</span> = 39</li>
+<li><span class="math inline">\(X_{3,50,4}\)</span> = 22.8</li>
+</ul></li>
+</ul>
 
+</div>
 </div>
             </section>
 
@@ -148,7 +389,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literature.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="t-tests.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -186,6 +427,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
