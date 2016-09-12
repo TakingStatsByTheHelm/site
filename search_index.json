@@ -1,0 +1,9 @@
+[
+["index.html", "Taking Stats by the Helm Chapter 1 Welcome 1.1 Mission 1.2 Scope", " Taking Stats by the Helm Jonathan Lee Helm 2016-09-11 Chapter 1 Welcome Taking Stats by the Helm is a forum to answer questions that arise during statistical analysis of behavioral data. Use the sidebar to select a topic to learn, send a message to pose a new question, or propose a new topic that you’d like to learn or teach. 1.1 Mission Our mission is to teach statistics commonly used within the social sciences. We seek to provide resources that enable undergraduate students, graduate students, independent researchers, and faculty to confidently conduct statistical analyses. 1.2 Scope We provide the conceptual underpinnings and practical applications of a variety of methods used within the social sciences. Topics include t-tests, ANOVA, multiple regression, structural equation modeling, and multilevel models. Where applicable, we provide R code to illustrate specific methods. devtools::install_github(&quot;rstudio/bookdown&quot;) "],
+["notation.html", "Chapter 2 Notation", " Chapter 2 Notation Need to fill this in "],
+["literature.html", "Chapter 3 Literature", " Chapter 3 Literature Here is a review of existing methods. "],
+["methods.html", "Chapter 4 Methods", " Chapter 4 Methods We describe our methods in this chapter. "],
+["applications.html", "Chapter 5 Applications 5.1 Example one 5.2 Example two", " Chapter 5 Applications Some significant applications are demonstrated in this chapter. 5.1 Example one 5.2 Example two "],
+["final-words.html", "Chapter 6 Final Words", " Chapter 6 Final Words We have finished a nice book. "],
+["references.html", "References", " References "]
+]
