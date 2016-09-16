@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Taking Stats by the Helm</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="A Forum for Understanding Statistics">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Taking Stats by the Helm" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A Forum for Understanding Statistics" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Taking Stats by the Helm" />
+  
+  <meta name="twitter:description" content="A Forum for Understanding Statistics" />
+  
+
+<meta name="author" content="Jonathan Lee Helm">
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="regression.html">
+<link rel="next" href="multilevel-models.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Forum for Understanding Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>2</b> Notation</a></li>
+<li class="chapter" data-level="3" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i><b>3</b> <em>t</em>-tests</a></li>
+<li class="chapter" data-level="4" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>4</b> ANOVA</a></li>
+<li class="chapter" data-level="5" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>5</b> Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="regression.html"><a href="regression.html#read-in-the-data"><i class="fa fa-check"></i><b>5.1</b> Read in the Data</a></li>
+<li class="chapter" data-level="5.2" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>5.2</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="5.3" data-path="regression.html"><a href="regression.html#confidence-intervals-for-regression-coefficients"><i class="fa fa-check"></i><b>5.3</b> Confidence Intervals for Regression Coefficients</a></li>
+<li class="chapter" data-level="5.4" data-path="regression.html"><a href="regression.html#confidence-intervals-for-predicted-values"><i class="fa fa-check"></i><b>5.4</b> Confidence Intervals for Predicted values</a></li>
+<li class="chapter" data-level="5.5" data-path="regression.html"><a href="regression.html#mean-centering"><i class="fa fa-check"></i><b>5.5</b> Mean Centering</a></li>
+<li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#multiple-regression"><i class="fa fa-check"></i><b>5.6</b> Multiple Regression</a></li>
+<li class="chapter" data-level="5.7" data-path="regression.html"><a href="regression.html#interaction"><i class="fa fa-check"></i><b>5.7</b> Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="matrix-notation-and-regression.html"><a href="matrix-notation-and-regression.html"><i class="fa fa-check"></i><b>6</b> Matrix Notation and Regression</a><ul>
+<li class="chapter" data-level="6.1" data-path="matrix-notation-and-regression.html"><a href="matrix-notation-and-regression.html#summary"><i class="fa fa-check"></i><b>6.1</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="multilevel-models.html"><a href="multilevel-models.html"><i class="fa fa-check"></i><b>7</b> Multilevel Models</a></li>
+<li class="chapter" data-level="8" data-path="structural-equation-models.html"><a href="structural-equation-models.html"><i class="fa fa-check"></i><b>8</b> Structural Equation Models</a></li>
+<li class="divider"></li>
+<li><a href="https://TakingStatsByTheHelm.github.io/site" target="blank">Maintained by Jonathan Lee Helm</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Taking Stats by the Helm</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="matrix-notation-and-regression" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Matrix Notation and Regression</h1>
+<p>Let’s begin by noticing that <span class="math inline">\(y_i\)</span> can be written as a column vector. More specifically, if we have <span class="math inline">\(N\)</span> individuals within our sample, then <span class="math display">\[ y_i = \left[ \begin{array}{c}
+y_1 \\
+y_2 \\
+\vdots \\
+y_N \end{array} \right] \]</span></p>
+<p>Ok, then we can write the intercept-only regression model as</p>
+<p><span class="math display">\[ y_i = b_0 + \epsilon_i\]</span> or we can write it in matrix notation as</p>
+<p><span class="math display">\[ \left[ \begin{array}{c}
+y_1 \\
+y_2 \\
+\vdots \\
+y_N \end{array} \right]  = 
+\left[ \begin{array}{c}
+1 \\
+1 \\
+\vdots \\
+1 \end{array} \right] [b_0] + 
+\left[ \begin{array}{c}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_N \end{array} \right]\]</span></p>
+<p>Now, let’s extend this equation to include a single predictor. In particular, if we have</p>
+<p><span class="math display">\[ y_i = b_0 + b_1(x_{1i})  + \epsilon_i \]</span></p>
+<p>then we can rewrite equation in matrix notation as</p>
+<p><span class="math display">\[ \left[ \begin{array}{c}
+y_1 \\
+y_2 \\
+\vdots \\
+y_N \end{array} \right]  = 
+\left[ \begin{array}{cc}
+1, x_{11}\\
+1, x_{12}\\
+\vdots \\
+1, x_{1N}\end{array} \right]
+\left[ \begin{array}{c}b_0\\ b_1\end{array}\right] + 
+\left[ \begin{array}{c}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_N \end{array} \right]\]</span></p>
+<p>Finally, extending the equation that contains <span class="math inline">\(q\)</span> predictor variables, we have <span class="math display">\[ y_i = b_0 + b_1(x_{1i}) + b_2(x_{2i}) + ... + b_q(x_{qi}) + \epsilon_i \]</span></p>
+<p>which is written in matrix notation as</p>
+<p><span class="math display">\[ \left[ \begin{array}{c}
+y_1 \\
+y_2 \\
+\vdots \\
+y_N \end{array} \right]  = 
+\left[ \begin{array}{cccc}
+1, x_{11}, \ldots, x_{q1}\\
+1, x_{12}, \ldots, x_{q2}\\
+\vdots \\
+1, x_{1N}, \ldots, x_{qN}\end{array} \right]
+\left[ \begin{array}{c}b_0\\ b_1\\ \vdots\\ b_q\end{array}\right] + 
+\left[ \begin{array}{c}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_N \end{array} \right]\]</span></p>
+<p>When we implement this model within R, it is important to know that we call on <span class="math inline">\(y_i\)</span> and <span class="math inline">\({x_{1}, ..., x_{q}}\)</span> as variables within a data frame. We’ll emphasize this within the examples to come. Ok, now let’s simplify the notation a bit more. Let’s define</p>
+<p><span class="math display">\[ \boldsymbol{Y} = \left[ \begin{array}{c}
+y_1 \\
+y_2 \\
+\vdots \\
+y_N \end{array} \right] ;\boldsymbol{X} = \left[ \begin{array}{cccc}
+1, x_{11}, \ldots, x_{q1}\\
+1, x_{12}, \ldots, x_{q2}\\
+\vdots \\
+1, x_{1N}, \ldots, x_{qN}\end{array} \right]; \boldsymbol{b} = \left[ \begin{array}{c}b_0\\ b_1\\ \vdots\\ b_q\end{array}\right]; \boldsymbol{\epsilon} = \left[ \begin{array}{c}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots \\
+\epsilon_N \end{array} \right] \]</span></p>
+<p>Then, the regression model may be compactly written as</p>
+<p><span class="math display">\[ \boldsymbol{Y} = \boldsymbol{X}\boldsymbol{b} + \boldsymbol{\epsilon} \]</span></p>
+<p>Finally, we would like to solve for <span class="math inline">\(\boldsymbol{b}\)</span>. Those are the focal parameter estimates. First begin by premultiplying both sides of the equation by <span class="math inline">\(\boldsymbol{X&#39;}\)</span></p>
+<p><span class="math display">\[ \boldsymbol{X&#39;}\boldsymbol{Y} = \boldsymbol{X&#39;}\boldsymbol{X}\boldsymbol{b} \]</span></p>
+<p>Then premultiply both sides by <span class="math inline">\(\left(\boldsymbol{X&#39;}\boldsymbol{X}\right)^{-1}\)</span></p>
+<p><span class="math display">\[ \left(\boldsymbol{X&#39;}\boldsymbol{X}\right)^{-1}\boldsymbol{X&#39;}\boldsymbol{Y} = \left(\boldsymbol{X&#39;}\boldsymbol{X}\right)^{-1}\boldsymbol{X&#39;}\boldsymbol{X}\boldsymbol{b} \]</span></p>
+<p>which simpifies to <span class="math display">\[ \left(\boldsymbol{X&#39;}\boldsymbol{X}\right)^{-1}\boldsymbol{X&#39;}\boldsymbol{Y} = \boldsymbol{b} \]</span></p>
+<p>Therefore, we can easily calculate the estimates of the parameters using matrix algebra! And this form of matrix manipulation is, quite literally, what the computer program is performing to estimate a the parameters within a multiple regression.</p>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">6.1</span> Summary</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multilevel-models.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://TakingStatsByTheHelm.github.io/site04-Regression.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
